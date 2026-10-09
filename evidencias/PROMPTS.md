@@ -1,4 +1,4 @@
-PROMPT 1:
+PROMPT 1: ARRANQUE · las reglas
 
 Creá el archivo src/logica.ts con las reglas de ¿QUÉ CAMBIÓ?, según la ficha de abajo.
 
@@ -31,3 +31,43 @@ FICHA:
   3. Si acierto, se marca en verde y sube el puntaje.
   4. Si encuentro todas las diferencias antes de que el reloj llegue a cero, gano e incremento el nivel.
 - Lo que no va: Sin imágenes pesadas, sin sonido de fondo, sin librerías de UI externas.
+
+La IA generó `src/logica.ts` con el objeto `CONFIG`, los tipos del estado del juego y las funciones para reiniciar, seleccionar celdas y verificar el tiempo.
+
+PROMPT 2: PRUEBAS · que la máquina revise
+
+Creá el archivo src/logica.test.ts para probar las reglas de src/logica.ts con Vitest.
+
+REGLAS TÉCNICAS:
+- Usá Vitest (import { describe, it, expect } from 'vitest').
+- Probá los casos principales:
+  1. Estado inicial del juego (nivel 1, tiempo inicial, puntuación en 0).
+  2. Acierto: seleccionar la celda con diferencia suma puntos y la marca como encontrada.
+  3. Error: seleccionar una celda sin diferencia descuenta un intento o vida.
+  4. Victoria de nivel: encontrar todas las diferencias sube de nivel y reinicia el tablero.
+  5. Derrota: agotar los intentos/tiempo cambia el estado a juego terminado.
+  6. Determinismo: probar que usar la misma semilla genera el mismo tablero.
+
+REGLAS DE TRABAJO:
+- No modifiques src/logica.ts a menos que sea un error crítico.
+- Código y comentarios en español.
+
+- Resultado: La IA creó `src/logica.test.ts` cubriendo los casos de inicio, aciertos, fallos, cambio de nivel y semillas deterministas.
+
+PROMPT 3: PANTALLA · que se vea
+
+Creá la interfaz de usuario en src/main.ts y los estilos en src/style.css para ¿QUÉ CAMBIÓ? utilizando la lógica de src/logica.ts.
+
+REGLAS TÉCNICAS Y DESIGN MOBILE-FIRST:
+- Conectá toda la interfaz con las funciones de src/logica.ts.
+- Renderizá las dos matrices (Matriz A y Matriz B), el temporizador, el nivel actual, el puntaje y los intentos/fallos.
+- Diseño accesible para celular: elementos táctiles (celdas/botones) con tamaño mínimo de 44px x 44px, tamaño de fuente mínimo de 16px y 0 scroll horizontal.
+- Soporte para controles: interacción táctil/clic en celdas y navegación por teclado (flechas para moverte, Enter/Espacio para seleccionar).
+- Colores según la ficha: Azul/Cian para interfaz/celdas base, Verde para aciertos, Rojo para errores y fondo oscuro de alto contraste.
+- Botón claro para reiniciar/jugar de nuevo al ganar o perder.
+
+REGLAS DE TRABAJO:
+- No modifiques src/logica.ts.
+- Código y comentarios en español.
+
+Resultado: Se implementó la interfaz visual, soporte táctil/teclado y estilos responsive.
