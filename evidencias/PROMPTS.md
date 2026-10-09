@@ -86,3 +86,16 @@ No cambies las reglas ni la dificultad. Decime qué ajustaste.
 
 Resultado: Se ajustó `style.css` garantizando zonas táctiles de mínimo 44px, tipografía mínima de 16px, eliminación de anchos fijos para evitar scroll horizontal, y se confirmó la presencia del tag viewport en `index.html`.
 
+PROMPT 4: los seis problemas típicos
+
+evisá todo el proyecto buscando estos seis problemas, y decime cuáles tiene y en qué línea está cada uno:
+1. Lógica metida dentro de main.ts.
+2. Números sueltos fuera del objeto CONFIG.
+3. Un final bueno al que no se pueda llegar: hacé el cálculo con los números reales.
+4. Estado que no se reinicia bien al empezar de nuevo.
+5. Variables o funciones que quedaron sin uso.
+6. Alguna regla de mi ficha que las pruebas no cubran.
+
+Solo el informe, numerado. TODAVÍA NO ARREGLES NADA.
+
+Resultado: Copilot detectó números fuera de `CONFIG`, archivos/CSS sin uso (`counter.ts`, `--superficie`) y la falta de un test para verificar el estado de `victoria` al completar el último nivel.
