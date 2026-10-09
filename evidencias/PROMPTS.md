@@ -71,3 +71,18 @@ REGLAS DE TRABAJO:
 - Código y comentarios en español.
 
 Resultado: Se implementó la interfaz visual, soporte táctil/teclado y estilos responsive.
+
+PROMPT 4: Adaptación Móvil
+
+Haz que esto funcione bien en un celular:
+
+1. Todo lo que se toca tiene que medir al menos 44 píxeles de alto y de ancho.
+2. Nada se sale de la pantalla a lo ancho: cero desplazamiento horizontal.
+3. El texto nunca baja de 16 píxeles.
+4. Funciona con el dedo (toque) y también con teclado, las dos cosas.
+5. Agregá la etiqueta viewport en index.html si falta.
+
+No cambies las reglas ni la dificultad. Decime qué ajustaste.
+
+Resultado: Se ajustó `style.css` garantizando zonas táctiles de mínimo 44px, tipografía mínima de 16px, eliminación de anchos fijos para evitar scroll horizontal, y se confirmó la presencia del tag viewport en `index.html`.
+
